@@ -1,0 +1,26 @@
+services:
+    AppBundle\Admin\YearAdmin:
+        class: AppBundle\Admin\YearAdmin
+        arguments: [~, AppBundle\Entity\Year, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Year }
+        public: true
+        
+    AppBundle\Admin\JamTypeAdmin:
+        class: AppBundle\Admin\JamTypeAdmin
+        arguments: [~, AppBundle\Entity\JamType, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Jar type }
+        public: true
+        
+    AppBundle\Admin\JamJarAdmin:
+        class: AppBundle\Admin\JamJarAdmin
+        arguments: [~, AppBundle\Entity\JamJar, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Jam jars }
+        public: true
+        
+        calls:
+            - method: setCreateFormHandler
+              arguments:
+                  - '@AppBundle\Service\Form\JamJarCreateFormHandler'

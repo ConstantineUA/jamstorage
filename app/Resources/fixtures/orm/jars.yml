@@ -1,0 +1,30 @@
+AppBundle\Entity\Year:
+  year_2016:
+    name: 2016
+  
+  year_2017:
+    name: 2017
+
+  year_2018:
+    name: 2018
+    
+AppBundle\Entity\JamType:
+  strawberry:
+    name: 'strawberry'
+  
+  cherry:
+    name: 'cherry'
+
+  kiwi:
+    name: 'kiwi'
+    
+AppBundle\Entity\JamJar:
+  strawberry_jar:
+    year: '@year_2016'
+    type: '@strawberry'
+    comment: Eat me!
+    
+  cherry_jar:
+    year: '@year_2017'
+    type: '@cherry'
+    comment: Im tasty
